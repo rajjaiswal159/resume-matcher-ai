@@ -31,4 +31,10 @@ It extracts skills, detects missing skills, and calculates semantic + skill-base
 
 ## 📂 Project Structure
 
-logic.py        -> Core NLP logic (skill extraction + similarity scoring) main.py         -> Streamlit frontend abbr_df.csv     -> Abbreviation mapping dataset final_skills.csv -> Skill database
+```
+├── logic.py        -> Core NLP logic (skill extraction + similarity scoring)
+├──
+├── main.py         -> Streamlit frontend
+├── abbr_df.csv     -> Abbreviation mapping dataset
+└── final_skills.csv -> Skill database
+```
