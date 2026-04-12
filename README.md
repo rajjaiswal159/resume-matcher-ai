@@ -4,7 +4,7 @@ An AI-powered web application that compares a Resume (PDF) with a Job Descriptio
 
 Built using Streamlit + SpaCy + Sentence-BERT.
 <h2>🚀 Live Features</h2>
-📤 Upload Resume (PDF)
+• 📤 Upload Resume (PDF)
 📝 Paste Job Description
 🧠 AI-based skill extraction (Regex + NLP + Embeddings)
 🎯 Skill matching analysis
