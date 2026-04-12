@@ -108,23 +108,26 @@ def extract_phrases_spacy(text):
 
 
 # Match phrases to skills using embedding similarity
-def semantic_skill_extractor(text, threshold):
-    words = extract_phrases_spacy(text)  # unique words only
+def semantic_skill_extractor(text, base_threshold, top_k):
+    phrases = extract_phrases_spacy(text)
 
-    if not words:
+    if not phrases:
         return set()
 
-    word_embeddings = model.encode(words, convert_to_tensor=True)   
+    phrase_embeddings = model.encode(phrases, convert_to_tensor=True)
+    sim_matrix = util.cos_sim(phrase_embeddings, skill_embeddings)
 
-    sim_matrix = util.cos_sim(word_embeddings, skill_embeddings)  
+    found = set()
 
-    max_scores, max_indices = sim_matrix.max(dim=1)
+    for i in range(sim_matrix.shape[0]):
+        scores = sim_matrix[i]
 
-    found = {
-        SKILLS_DB[idx]
-        for score, idx in zip(max_scores, max_indices)
-        if score > threshold
-    }
+        # Get top-k matches
+        top_scores, top_indices = scores.topk(k=top_k)
+
+        for score, idx in zip(top_scores, top_indices):
+            if score.item() >= base_threshold:
+                found.add(SKILLS_DB[idx])
 
     return found
 
@@ -133,7 +136,7 @@ def semantic_skill_extractor(text, threshold):
 def hybrid_skill_extraction(text):
 
     regex_skills = extract_skills_regex(text)  
-    semantic_skills = semantic_skill_extractor(text, 0.7)  
+    semantic_skills = semantic_skill_extractor(text, 0.6, 3)  
   
     # Merge all  
     final_skills = regex_skills | semantic_skills 
