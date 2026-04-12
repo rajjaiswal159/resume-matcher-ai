@@ -93,3 +93,9 @@ python -m spacy download en_core_web_sm
 ```
 streamlit run main.py
 ```
+
+---
+
+### 👨‍💻 Author
+Built by Raj
+B.Tech CSE Student | Aspiring Data Scientist & ML Engineer
