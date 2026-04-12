@@ -71,3 +71,25 @@ The system provides:
 - 🧠 Final AI Match Score (%)
 
 ---
+
+## 🖥️ Installation & Setup
+### 1. Clone Repository
+```
+git clone https://github.com/your-username/resume-matcher-ai.git
+cd resume-matcher-ai
+```
+
+### 2. Install Dependencies
+```
+pip install -r requirements.txt
+```
+
+### 3. Download spaCy model
+```
+python -m spacy download en_core_web_sm
+```
+
+### 4. Run Application
+```
+streamlit run main.py
+```
