@@ -1,8 +1,9 @@
 # 📄 AI Resume vs Job Description Matcher
 
 An AI-powered web application that compares a Resume (PDF) with a Job Description (JD) and provides an intelligent skill match score, missing skills analysis, and semantic similarity scoring using NLP and Sentence Transformers.
+
 Built using Streamlit + SpaCy + Sentence-BERT.
-🚀 Live Features
+<h2>🚀 Live Features</h2>
 📤 Upload Resume (PDF)
 📝 Paste Job Description
 🧠 AI-based skill extraction (Regex + NLP + Embeddings)
