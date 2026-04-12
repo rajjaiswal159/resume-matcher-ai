@@ -75,7 +75,7 @@ The system provides:
 ## 🖥️ Installation & Setup
 ### 1. Clone Repository
 ```
-git clone https://github.com/your-username/resume-matcher-ai.git
+git clone https://github.com/rajjaiswal159/resume-matcher-ai.git
 cd resume-matcher-ai
 ```
 
