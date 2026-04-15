@@ -7,8 +7,8 @@ import pandas as pd
 # Load NLP models and required datasets
 nlp = spacy.load("en_core_web_sm")
 model = SentenceTransformer("all-MiniLM-L6-v2")
-abbr_df = pd.read_csv("abbreviations.csv")
-SKILLS_DB = pd.read_csv("skills.csv")["skill"].tolist()
+abbr_df = pd.read_csv("abbreviations_data.csv")
+SKILLS_DB = pd.read_csv("skills_data.csv")["skill"].tolist()
 
 
 # Build abbreviation lookup dictionary
