@@ -65,7 +65,9 @@
         "model deployment",
         "fastapi",
         "flask",
-        "rest api"
+        "rest api",
+        "api deployment",
+        "monitoring"
     ],
     "statistics": [
         "hypothesis testing",
@@ -73,7 +75,9 @@
         "probability",
         "statistics",
         "bayesian",
-        "linear algebra"
+        "linear algebra",
+        "statistical modeling",
+        "distribution"
     ],
     "data engineering": [
         "spark",
