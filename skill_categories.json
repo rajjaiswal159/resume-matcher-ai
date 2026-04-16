@@ -55,7 +55,8 @@
         "google cloud",
         "azure",
         "cloud deployment",
-        "ec2"
+        "ec2",
+        "s3"
     ],
     "mlops": [
         "docker",
