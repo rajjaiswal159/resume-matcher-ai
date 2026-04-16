@@ -1,25 +1,16 @@
 {
     "data manipulation": [
         "pandas",
-        "numpy"
-    ],
-    "data cleaning": [
-        "pandas",
-        "numpy"
-    ],
-    "data visualization": [
-        "matplotlib",
-        "seaborn",
-        "plotly",
-        "power bi",
-        "tableau"
+        "numpy",
+        "data cleaning"
     ],
     "data analysis": [
         "matplotlib",
         "seaborn",
         "plotly",
         "power bi",
-        "tableau"
+        "tableau",
+        "data visualization"
     ],
     "machine learning": [
         "sklearn",
