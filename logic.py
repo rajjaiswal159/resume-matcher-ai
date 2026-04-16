@@ -14,6 +14,14 @@ SKILLS_DB = pd.read_csv("skills_data.csv")["skill"].tolist()
 with open("skill_categories.json", "r") as f:
     SKILL_CATEGORIES = json.load(f)
 
+# Build fast lookup: skill → category
+CATEGORY_LOOKUP = {}
+
+for category, skills in SKILL_CATEGORIES.items():
+    for skill in skills:
+        CATEGORY_LOOKUP[skill] = category
+        
+
 # Build abbreviation lookup dictionary
 ABBREVIATIONS = dict(zip(
     abbr_df["abbv"],
@@ -154,25 +162,16 @@ def skill_match_score(resume_skills, jd_skills):
     return len(resume_skills & jd_skills) / len(jd_skills)
 
 
-# Build fast lookup: skill → category
-CATEGORY_LOOKUP = {}
-
-for category, skills in SKILL_CATEGORIES.items():
-    for skill in skills:
-        CATEGORY_LOOKUP[skill] = category
-
-
 # Map extracted skills to their categories
 def map_to_category(skills):
     mapped = set()
 
     for skill in skills:
-        s = normalize_skill(skill)
 
-        if s in CATEGORY_LOOKUP:
-            mapped.add(CATEGORY_LOOKUP[s])
+        if skill in CATEGORY_LOOKUP:
+            mapped.add(CATEGORY_LOOKUP[skill])
         else:
-            mapped.add(s) 
+            mapped.add(skill) 
 
     return mapped
 
