@@ -19,11 +19,18 @@
         "dashboard"
     ],
     "machine learning": [
-        "sklearn",
         "scikit learn",
         "regression",
         "classification",
-        "clustering"
+        "clustering",
+        "decision trees",
+        "random forest",
+        "support vector machine",
+        "xgboost",
+        "lightgbm",
+        "model evaluation",
+        "cross validation",
+        "feature selection"
     ],
     "deep learning": [
         "tensorflow",
