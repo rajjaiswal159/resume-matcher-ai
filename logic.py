@@ -119,7 +119,7 @@ def extract_phrases_spacy(text):
 
 
 # Match phrases to skills using embedding similarity
-def semantic_skill_extractor(text, base_threshold, top_k):
+def semantic_skill_extractor(text, base_threshold):
     phrases = extract_phrases_spacy(text)
 
     if not phrases:
@@ -134,11 +134,11 @@ def semantic_skill_extractor(text, base_threshold, top_k):
         scores = sim_matrix[i]
 
         # Get top-k matches
-        top_scores, top_indices = scores.topk(k=top_k)
+        max_score, max_idx = scores.max(dim=0)
 
-        for score, idx in zip(top_scores, top_indices):
-            if score.item() >= base_threshold:
-                found.add(SKILLS_DB[idx])
+        # Check threshold
+        if max_score.item() >= base_threshold:
+            found.add(SKILLS_DB[max_idx])
 
     return found
 
@@ -147,7 +147,7 @@ def semantic_skill_extractor(text, base_threshold, top_k):
 def hybrid_skill_extraction(text):
 
     regex_skills = extract_skills_regex(text)  
-    semantic_skills = semantic_skill_extractor(text, 0.8, 1)  
+    semantic_skills = semantic_skill_extractor(text, 0.8)  
   
     # Merge all  
     final_skills = regex_skills | semantic_skills 
@@ -167,11 +167,9 @@ def map_to_category(skills):
     mapped = set()
 
     for skill in skills:
-
+        mapped.add(skill)
         if skill in CATEGORY_LOOKUP:
-            mapped.add(CATEGORY_LOOKUP[skill])
-        else:
-            mapped.add(skill) 
+            mapped.add(CATEGORY_LOOKUP[skill]) 
 
     return mapped
 
@@ -195,4 +193,4 @@ def final_similarity(resume, jd):
         "missing_skills": list(jd_skills - resume_skills),
         "skill_score": round(skill_score, 2)*100,
         "final_score": round(final_score, 2)*100
-    }
+        }
