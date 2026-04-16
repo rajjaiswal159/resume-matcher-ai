@@ -72,12 +72,11 @@
         "big data"
     ],
     "natural language processing": [
-        "nlp",
         "text processing",
         "tokenization",
         "named entity recognition",
-        "bert",
-        "gpt"
+        "nltk",
+        "spacy"
     ],
     "computer vision": [
         "opencv",
@@ -86,7 +85,7 @@
         "image classification",
         "yolo"
     ],
-    "version vontrol": [
+    "version control": [
         "git",
         "github",
         "bitbucket",
