@@ -2,6 +2,7 @@ import re
 from sentence_transformers import SentenceTransformer, util
 import spacy
 import pandas as pd
+import json
 
 
 # Load NLP models and required datasets
@@ -10,6 +11,8 @@ model = SentenceTransformer("all-MiniLM-L6-v2")
 abbr_df = pd.read_csv("abbreviations_data.csv")
 SKILLS_DB = pd.read_csv("skills_data.csv")["skill"].tolist()
 
+with open("skill_categories.json", "r") as f:
+    SKILL_CATEGORIES = json.load(f)
 
 # Build abbreviation lookup dictionary
 ABBREVIATIONS = dict(zip(
@@ -151,12 +154,38 @@ def skill_match_score(resume_skills, jd_skills):
     return len(resume_skills & jd_skills) / len(jd_skills)
 
 
+# Build fast lookup: skill → category
+CATEGORY_LOOKUP = {}
+
+for category, skills in SKILL_CATEGORIES.items():
+    for skill in skills:
+        CATEGORY_LOOKUP[skill] = category
+
+
+# Map extracted skills to their categories
+def map_to_category(skills):
+    mapped = set()
+
+    for skill in skills:
+        s = normalize_skill(skill)
+
+        if s in CATEGORY_LOOKUP:
+            mapped.add(CATEGORY_LOOKUP[s])
+        else:
+            mapped.add(s) 
+
+    return mapped
+
+
 # End-to-end resume vs JD evaluation
 def final_similarity(resume, jd):
 
     resume_skills = hybrid_skill_extraction(resume)  
     jd_skills = hybrid_skill_extraction(jd)  
 
+    resume_skills = map_to_category(resume_skills)
+    jd_skills = map_to_category(jd_skills)
+    
     skill_score = skill_match_score(resume_skills, jd_skills)  
     semantic_score = sentence_level_similarity(resume, jd)  
 
