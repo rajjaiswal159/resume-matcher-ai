@@ -2,7 +2,11 @@
     "data manipulation": [
         "pandas",
         "numpy",
-        "data cleaning"
+        "data cleaning",
+        "data preprocessing",
+        "data wrangling",
+        "feature engineering",
+        "extract transform load"
     ],
     "data analysis": [
         "matplotlib",
