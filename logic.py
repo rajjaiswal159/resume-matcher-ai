@@ -147,7 +147,7 @@ def semantic_skill_extractor(text, base_threshold, top_k):
 def hybrid_skill_extraction(text):
 
     regex_skills = extract_skills_regex(text)  
-    semantic_skills = semantic_skill_extractor(text, 0.6, 3)  
+    semantic_skills = semantic_skill_extractor(text, 0.8, 1)  
   
     # Merge all  
     final_skills = regex_skills | semantic_skills 
