@@ -1,0 +1,105 @@
+{
+    "data manipulation": [
+        "pandas",
+        "numpy"
+    ],
+    "data cleaning": [
+        "pandas",
+        "numpy"
+    ],
+    "data visualization": [
+        "matplotlib",
+        "seaborn",
+        "plotly",
+        "power bi",
+        "tableau"
+    ],
+    "data analysis": [
+        "matplotlib",
+        "seaborn",
+        "plotly",
+        "power bi",
+        "tableau"
+    ],
+    "machine learning": [
+        "sklearn",
+        "scikit learn",
+        "regression",
+        "classification",
+        "clustering"
+    ],
+    "deep learning": [
+        "tensorflow",
+        "keras",
+        "pytorch",
+        "cnn",
+        "rnn",
+        "lstm",
+        "transformers",
+        "neural networks"
+    ],
+    "databases": [
+        "sql",
+        "mysql",
+        "postgresql",
+        "mongodb",
+        "nosql",
+        "sqlite"
+    ],
+    "cloud computing": [
+        "amazon web services",
+        "gcp",
+        "google cloud",
+        "azure",
+        "cloud deployment"
+    ],
+    "mlops": [
+        "docker",
+        "kubernetes",
+        "mlflow",
+        "ci cd",
+        "model deployment",
+        "fastapi",
+        "flask",
+        "rest api"
+    ],
+    "statistics": [
+        "hypothesis testing",
+        "a/b testing",
+        "probability",
+        "statistics",
+        "bayesian",
+        "linear algebra"
+    ],
+    "data engineering": [
+        "spark",
+        "hadoop",
+        "pyspark",
+        "airflow",
+        "kafka",
+        "data pipelines",
+        "big data"
+    ],
+    "natural language processing": [
+        "nlp",
+        "text processing",
+        "tokenization",
+        "named entity recognition",
+        "bert",
+        "gpt"
+    ],
+    "computer vision": [
+        "opencv",
+        "image processing",
+        "object detection",
+        "image classification",
+        "yolo"
+    ],
+    "version vontrol": [
+        "git",
+        "github",
+        "bitbucket",
+        "linux",
+        "bash"
+    ]
+}
