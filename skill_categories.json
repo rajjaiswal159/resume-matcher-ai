@@ -67,7 +67,10 @@
         "flask",
         "rest api",
         "api deployment",
-        "monitoring"
+        "monitoring",
+        "rest api",
+        "streamlit",
+        "gradio"
     ],
     "statistics": [
         "hypothesis testing",
