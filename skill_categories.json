@@ -52,10 +52,10 @@
     ],
     "cloud computing": [
         "amazon web services",
-        "gcp",
         "google cloud",
         "azure",
-        "cloud deployment"
+        "cloud deployment",
+        "ec2",
     ],
     "mlops": [
         "docker",
