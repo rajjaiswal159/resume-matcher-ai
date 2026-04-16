@@ -23,9 +23,9 @@
         "tensorflow",
         "keras",
         "pytorch",
-        "cnn",
-        "rnn",
-        "lstm",
+        "convolutional neural network",
+        "recurrent neural network",
+        "long short term memory",
         "transformers",
         "neural networks"
     ],
