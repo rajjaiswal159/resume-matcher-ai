@@ -93,7 +93,10 @@
         "tokenization",
         "named entity recognition",
         "nltk",
-        "spacy"
+        "spacy",
+        "tf idf",
+        "word embeddings",
+        "text classification"
     ],
     "computer vision": [
         "opencv",
