@@ -9,12 +9,14 @@
         "extract transform load"
     ],
     "data analysis": [
+        "exploratory data analysis",
         "matplotlib",
         "seaborn",
         "plotly",
         "power bi",
         "tableau",
-        "data visualization"
+        "data visualization",
+        "dashboard"
     ],
     "machine learning": [
         "sklearn",
