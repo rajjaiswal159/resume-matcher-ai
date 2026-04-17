@@ -113,7 +113,9 @@ def extract_phrases_spacy(text):
         # skip chunks with only stopwords
         if all(token.is_stop for token in chunk):
             continue
-        phrases.add(chunk.text.lower())
+            
+        lemmatized = " ".join([token.lemma_ for token in chunk])
+        phrases.add(lemmatized.lower())
     
     return list(phrases)
 
